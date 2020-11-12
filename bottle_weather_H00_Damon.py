@@ -3,16 +3,9 @@ from bottle import route, run, template
 import datetime #Using this import to convert the UNIX timestamp from openweathermap to the regular date and time format
 
 # Apply an account at openweathermap.org.
-# Run this program. You will see a Json of the weather of Dover.
-# View the Json at jsonviewer.stack.hu
-# Modify the program so that it displays
-#    current time and date
-#    current temperature (round to 1 decimal places in Fahrenheit)
-#    humidity (round to 1 decimal places in percentage)
-
 @route('/')
 def index(): # The function
-  city = 'Dover, Delaware' #Inserting a City,State. I was going to change it to user input but the question only asked about Dover,DE."
+  city = input("Please enter city name : ") 
   apikey = 'b0906263b97835f4e5422443cc5606eb' #My apikey
   url = template('http://api.openweathermap.org/data/2.5/weather?q={{city}}&units=imperial&appid={{apikey}}', #Converting the units from Kelvins to Fahrenheit
        city=city, apikey=apikey)
