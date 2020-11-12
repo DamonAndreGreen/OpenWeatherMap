@@ -45,6 +45,6 @@ def index(): # The function
     ).strftime('%Y-%m-%d %H:%M:%S')))
   
   # return str(dict) The original Json. Disabled as I extracted the data from it and printed the data that needed to be printed.
-  
+index()
 run(host='localhost', port=80, debug=True, reloader=True)
 
